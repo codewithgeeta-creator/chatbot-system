@@ -2,6 +2,7 @@
   "intents": [
 
     {
+      "tag": "greeting",
       "patterns": [
         "hi", "hello", "hey",
         "ನಮಸ್ಕಾರ", "ಹಾಯ್",
@@ -14,9 +15,10 @@
     },
 
     {
+      "tag": "about",
       "patterns": [
         "about college", "about ait",
-        "ಕಾಲೇಜ್ ಬಗ್ಗೆ ಮಾಹಿತಿ", 
+        "ಕಾಲೇಜ್ ಬಗ್ಗೆ ಮಾಹಿತಿ",
         "कॉलेज के बारे में बताओ",
         "కాలేజ్ గురించి చెప్పండి"
       ],
@@ -26,6 +28,7 @@
     },
 
     {
+      "tag": "courses",
       "patterns": [
         "courses", "branches",
         "ಕೋರ್ಸ್‌ಗಳು ಯಾವುವು", "ಯಾವ ಬ್ರಾಂಚ್‌ಗಳು ಇವೆ",
@@ -38,6 +41,7 @@
     },
 
     {
+      "tag": "fees",
       "patterns": [
         "fees", "fee structure",
         "ಕಾಲೇಜ್ ಫೀಸ್ ಎಷ್ಟು", "ಫೀಸ್ ವಿವರ",
@@ -50,6 +54,7 @@
     },
 
     {
+      "tag": "admission",
       "patterns": [
         "admission", "how to apply",
         "ಅಡ್ಮಿಷನ್ ಹೇಗೆ ಪಡೆಯುವುದು", "ಅರ್ಜಿ ಹೇಗೆ ಹಾಕಬೇಕು",
@@ -62,6 +67,7 @@
     },
 
     {
+      "tag": "timings",
       "patterns": [
         "timings", "college time",
         "ಕಾಲೇಜ್ ಸಮಯ", "ಟೈಮಿಂಗ್ ಏನು",
@@ -74,6 +80,7 @@
     },
 
     {
+      "tag": "placement",
       "patterns": [
         "placement", "placement details", "placement record",
         "ಪ್ಲೇಸ್ಮೆಂಟ್ ಮಾಹಿತಿ", "ಎಷ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು ಪ್ಲೇಸ್ ಆಗಿದ್ದಾರೆ",
@@ -81,11 +88,12 @@
         "ప్లేస్‌మెంట్ వివరాలు", "ఎంతమంది స్టూడెంట్స్ ప్లేస్ అయ్యారు"
       ],
       "responses": [
-        "In the recent placement drive,  Cloud Built (20 students), Rinex (13 students), Inner Circle (9 students), Edubricz (5 students), HLT Software (7 students), Tata Electronics (16 students), Bosch (5 students), Basant Technologies (23 students), and SMK Management (3 students) participated. Around 101 students were successfully placed."
+        "In the recent placement drive, Cloud Built (20 students), Rinex (13 students), Inner Circle (9 students), Edubricz (5 students), HLT Software (7 students), Tata Electronics (16 students), Bosch (5 students), Basant Technologies (23 students), and SMK Management (3 students) participated. Around 101 students were successfully placed."
       ]
     },
 
     {
+      "tag": "companies",
       "patterns": [
         "companies", "recruiters",
         "ಯಾವ ಕಂಪನಿಗಳು ಬರುತ್ತವೆ",
@@ -93,11 +101,12 @@
         "ఏ కంపెనీలు వస్తాయి"
       ],
       "responses": [
-        "The companies that visited our campus include  Cloud Built, Rinex, Inner Circle, Edubricz, HLT Software, Tata Electronics, Bosch, Basant Technologies, and SMK Management."
+        "The companies that visited our campus include Cloud Built, Rinex, Inner Circle, Edubricz, HLT Software, Tata Electronics, Bosch, Basant Technologies, and SMK Management."
       ]
     },
 
     {
+      "tag": "facilities",
       "patterns": [
         "facilities",
         "ಸೌಲಭ್ಯಗಳು ಯಾವುವು",
@@ -110,6 +119,7 @@
     },
 
     {
+      "tag": "library",
       "patterns": [
         "library",
         "ಲೈಬ್ರರಿ",
@@ -122,6 +132,7 @@
     },
 
     {
+      "tag": "transport",
       "patterns": [
         "transport", "bus",
         "ಬಸ್ ಸೌಲಭ್ಯ",
@@ -134,6 +145,7 @@
     },
 
     {
+      "tag": "contact",
       "patterns": [
         "contact", "phone number",
         "ಸಂಪರ್ಕ",
@@ -143,44 +155,35 @@
       "responses": [
         "You can contact the college through the official phone number or email available on the website."
       ]
+    },
+
+    {
+      "tag": "placement_package",
+      "patterns": [
+        "highest package",
+        "lowest package",
+        "placement salary",
+        "highest salary",
+        "lowest salary",
+        "what is highest package",
+        "what is lowest package",
+
+        "ಹೆಚ್ಚಿನ ಪ್ಯಾಕೇಜ್",
+        "ಕಡಿಮೆ ಪ್ಯಾಕೇಜ್",
+        "ಅತ್ಯಧಿಕ ಸಂಬಳ",
+        "ಕನಿಷ್ಠ ಸಂಬಳ",
+
+        "highest package kya hai",
+        "lowest package kya hai",
+        "salary kitna milta hai",
+
+        "highest package enti",
+        "lowest package enti"
+      ],
+      "responses": [
+        "The highest package offered is 5.5 LPA and the lowest package is 2.4 LPA."
+      ]
     }
-{
-  "tag": "placement_package",
-  "patterns": [
-    "highest package",
-    "lowest package",
-    "placement salary",
-    "highest salary",
-    "lowest salary",
-    "what is highest package",
-    "what is lowest package",
-    
-    "ಹೆಚ್ಚಿನ ಪ್ಯಾಕೇಜ್",
-    "ಕಡಿಮೆ ಪ್ಯಾಕೇಜ್",
-    "ಅತ್ಯಧಿಕ ಸಂಬಳ",
-    "ಕನಿಷ್ಠ ಸಂಬಳ",
-    
-    "highest package kya hai",
-    "lowest package kya hai",
-    "salary kitna milta hai",
-    
-    "highest package enti",
-    "lowest package enti"
-  ],
-  "responses": [
-    {
-      "text": "The highest package offered is 5.5 LPA and the lowest package is 2.4 LPA."
-    },
-    {
-      "text": "ಅತ್ಯಧಿಕ ಪ್ಯಾಕೇಜ್ 5.5 LPA ಮತ್ತು ಕನಿಷ್ಠ ಪ್ಯಾಕೇಜ್ 2.4 LPA ಆಗಿದೆ."
-    },
-    {
-      "text": "Highest package 5.5 LPA hai aur lowest package 2.4 LPA hai."
-    },
-    {
-      "text": "Highest package 5.5 LPA mariyu lowest package 2.4 LPA."
-    }
-  ]
-}
+
   ]
 }
