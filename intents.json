@@ -81,7 +81,7 @@
         "ప్లేస్‌మెంట్ వివరాలు", "ఎంతమంది స్టూడెంట్స్ ప్లేస్ అయ్యారు"
       ],
       "responses": [
-        "In the recent placement drive, Planet-6 (6 students), Cloud Built (20 students), Rinex (13 students), Inner Circle (9 students), Edubricz (5 students), HLT Software (7 students), Tata Electronics (16 students), Bosch (5 students), Basant Technologies (23 students), and SMK Management (3 students) participated. Around 107 students were successfully placed."
+        "In the recent placement drive,  Cloud Built (20 students), Rinex (13 students), Inner Circle (9 students), Edubricz (5 students), HLT Software (7 students), Tata Electronics (16 students), Bosch (5 students), Basant Technologies (23 students), and SMK Management (3 students) participated. Around 101 students were successfully placed."
       ]
     },
 
@@ -93,7 +93,7 @@
         "ఏ కంపెనీలు వస్తాయి"
       ],
       "responses": [
-        "The companies that visited our campus include Planet-6, Cloud Built, Rinex, Inner Circle, Edubricz, HLT Software, Tata Electronics, Bosch, Basant Technologies, and SMK Management."
+        "The companies that visited our campus include  Cloud Built, Rinex, Inner Circle, Edubricz, HLT Software, Tata Electronics, Bosch, Basant Technologies, and SMK Management."
       ]
     },
 
@@ -144,6 +144,43 @@
         "You can contact the college through the official phone number or email available on the website."
       ]
     }
-
+{
+  "tag": "placement_package",
+  "patterns": [
+    "highest package",
+    "lowest package",
+    "placement salary",
+    "highest salary",
+    "lowest salary",
+    "what is highest package",
+    "what is lowest package",
+    
+    "ಹೆಚ್ಚಿನ ಪ್ಯಾಕೇಜ್",
+    "ಕಡಿಮೆ ಪ್ಯಾಕೇಜ್",
+    "ಅತ್ಯಧಿಕ ಸಂಬಳ",
+    "ಕನಿಷ್ಠ ಸಂಬಳ",
+    
+    "highest package kya hai",
+    "lowest package kya hai",
+    "salary kitna milta hai",
+    
+    "highest package enti",
+    "lowest package enti"
+  ],
+  "responses": [
+    {
+      "text": "The highest package offered is 5.5 LPA and the lowest package is 2.4 LPA."
+    },
+    {
+      "text": "ಅತ್ಯಧಿಕ ಪ್ಯಾಕೇಜ್ 5.5 LPA ಮತ್ತು ಕನಿಷ್ಠ ಪ್ಯಾಕೇಜ್ 2.4 LPA ಆಗಿದೆ."
+    },
+    {
+      "text": "Highest package 5.5 LPA hai aur lowest package 2.4 LPA hai."
+    },
+    {
+      "text": "Highest package 5.5 LPA mariyu lowest package 2.4 LPA."
+    }
+  ]
+}
   ]
 }
