@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, jsonify
 import json
+from googletrans import Translator
 
 app = Flask(__name__)
+translator = Translator()
 
 # Load intents
 with open("intents.json", encoding="utf-8") as file:
@@ -15,25 +17,25 @@ def home():
 
 @app.route("/get", methods=["POST"])
 def chatbot():
-    user_message = request.json["message"].lower()
+    user_message = request.json["message"]
 
-    # Loop through intents
+    # Detect language
+    detected = translator.detect(user_message)
+    user_lang = detected.lang
+
+    # Translate to English
+    translated = translator.translate(user_message, dest="en").text.lower()
+
+    # Match intent
     for intent in data["intents"]:
         for pattern in intent["patterns"]:
-            if pattern.lower() in user_message:
-                
-                # Detect language based on user input
-                if any(char in user_message for char in "ಅಆಇಈಉಊಎಏಐಒಓಔ"):
-                    return jsonify({"reply": intent.get("response_kn", intent["responses"][0])})
+            if pattern.lower() in translated:
+                reply = intent["responses"][0]
 
-                elif any(char in user_message for char in "अआइईउऊएऐओऔ"):
-                    return jsonify({"reply": intent.get("response_hi", intent["responses"][0])})
+                # Translate back to user language
+                final_reply = translator.translate(reply, dest=user_lang).text
 
-                elif any(char in user_message for char in "అఆఇఈఉఊఎఏఐఒఓఔ"):
-                    return jsonify({"reply": intent.get("response_te", intent["responses"][0])})
-
-                else:
-                    return jsonify({"reply": intent["responses"][0]})
+                return jsonify({"reply": final_reply})
 
     return jsonify({"reply": "Sorry, I didn't understand that."})
 
