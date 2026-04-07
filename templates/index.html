@@ -5,83 +5,129 @@
     <style>
         body {
             font-family: Arial;
-            background-color: #6f8fb1;
+            background-color: #6f8fb3;
+        }
+
+        h1 {
             text-align: center;
+            color: black;
         }
 
         #chatbox {
             width: 80%;
             height: 400px;
             margin: auto;
-            background: white;
-            overflow-y: auto;
-            padding: 10px;
+            background: #f2f2f2;
             border-radius: 10px;
+            padding: 10px;
+            overflow-y: scroll;
         }
 
         .user {
             text-align: right;
-            background: #007bff;
+            background: #1e90ff;
             color: white;
             padding: 8px;
             margin: 5px;
             border-radius: 10px;
-            display: inline-block;
-            max-width: 60%;
         }
 
         .bot {
             text-align: left;
-            background: #e5e5e5;
+            background: #dcdcdc;
             padding: 8px;
             margin: 5px;
             border-radius: 10px;
-            display: inline-block;
-            max-width: 60%;
         }
 
-        input {
-            width: 60%;
+        #inputArea {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            margin-top: 10px;
+        }
+
+        #text {
+            flex: 1;
             padding: 10px;
         }
 
         button {
             padding: 10px;
+            margin-left: 5px;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
 
-<h2>🎓 College AI Chatbot</h2>
+<h1>🎓 College AI Chatbot</h1>
 
-<div id="chatbox"></div>
+<div id="chatbox">
+    <div class="bot">Hello! How can I help you today?</div>
+</div>
 
-<input id="text" type="text" placeholder="Ask anything...">
-<button onclick="sendMessage()">Send</button>
+<div id="inputArea">
+    <input id="text" type="text" placeholder="Ask anything...">
+    <button onclick="sendMessage()">Send</button>
+    <button onclick="startVoice()">🎤 Speak</button>
+</div>
 
 <script>
-function sendMessage() {
-    let userText = document.getElementById("text").value;
-
-    if (userText.trim() === "") return;
-
+function addMessage(message, sender) {
     let chatbox = document.getElementById("chatbox");
+    let div = document.createElement("div");
+    div.className = sender;
+    div.innerText = message;
+    chatbox.appendChild(div);
+    chatbox.scrollTop = chatbox.scrollHeight;
+}
 
-    chatbox.innerHTML += `<div class="user">${userText}</div><br>`;
+function sendMessage() {
+    let input = document.getElementById("text");
+    let message = input.value;
+
+    if (message.trim() === "") return;
+
+    addMessage(message, "user");
 
     fetch("/get", {
         method: "POST",
-        body: new URLSearchParams({msg: userText}),
-        headers: {"Content-Type": "application/x-www-form-urlencoded"}
+        body: JSON.stringify({message: message}),
+        headers: {"Content-Type": "application/json"}
     })
-    .then(res => res.text())
+    .then(response => response.json())
     .then(data => {
-        chatbox.innerHTML += `<div class="bot">${data}</div><br>`;
-        chatbox.scrollTop = chatbox.scrollHeight;
+        addMessage(data.reply, "bot");
+        speak(data.reply);  // 🔊 voice output
     });
 
-    document.getElementById("text").value = "";
+    input.value = "";
+}
+
+function startVoice() {
+    let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+    recognition.lang = "en-IN";  // you can change language
+
+    recognition.start();
+
+    recognition.onresult = function(event) {
+        let text = event.results[0][0].transcript;
+        document.getElementById("text").value = text;
+        sendMessage();
+    };
+
+    recognition.onerror = function() {
+        alert("Voice recognition error. Try again.");
+    };
+}
+
+function speak(text) {
+    let speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "en-IN";
+    window.speechSynthesis.speak(speech);
 }
 </script>
 
