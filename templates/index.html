@@ -106,13 +106,20 @@ function addMessage(message, sender) {
 }
 
 function detectLanguage(text) {
-    if (/[ಅ-ಹ]/.test(text)) return "kn-IN";
-    if (/[अ-ह]/.test(text)) return "hi-IN";
-    if (/[అ-హ]/.test(text)) return "te-IN";
+    // Kannada Unicode range
+    if (/[\u0C80-\u0CFF]/.test(text)) return "kn-IN";
+
+    // Hindi (Devanagari)
+    if (/[\u0900-\u097F]/.test(text)) return "hi-IN";
+
+    // Telugu Unicode range
+    if (/[\u0C00-\u0C7F]/.test(text)) return "te-IN";
+
+    // Default English
     return "en-IN";
 }
 
-function sendMessage() {
+    function sendMessage() {
     let input = document.getElementById("text");
     let message = input.value;
 
