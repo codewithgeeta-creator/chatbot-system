@@ -1,44 +1,137 @@
-from flask import Flask, render_template, request, jsonify
-import json
-from googletrans import Translator
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College AI Chatbot</title>
 
-app = Flask(__name__)
-translator = Translator()
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #6f8fb3;
+        }
 
-# Load intents
-with open("intents.json", encoding="utf-8") as file:
-    data = json.load(file)
+        h1 {
+            text-align: center;
+            color: black;
+        }
 
+        #chatbox {
+            width: 80%;
+            height: 400px;
+            margin: auto;
+            background: #f2f2f2;
+            border-radius: 10px;
+            padding: 10px;
+            overflow-y: scroll;
+        }
 
-@app.route("/")
-def home():
-    return render_template("index.html")
+        .user {
+            text-align: right;
+            background: #1e90ff;
+            color: white;
+            padding: 8px;
+            margin: 5px;
+            border-radius: 10px;
+        }
 
+        .bot {
+            text-align: left;
+            background: #dcdcdc;
+            padding: 8px;
+            margin: 5px;
+            border-radius: 10px;
+        }
 
-@app.route("/get", methods=["POST"])
-def chatbot():
-    user_message = request.json["message"]
+        #inputArea {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            margin-top: 10px;
+        }
 
-    # Detect language
-    detected = translator.detect(user_message)
-    user_lang = detected.lang
+        #text {
+            flex: 1;
+            padding: 10px;
+        }
 
-    # Translate to English
-    translated = translator.translate(user_message, dest="en").text.lower()
+        button {
+            padding: 10px;
+            margin-left: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
 
-    # Match intent
-    for intent in data["intents"]:
-        for pattern in intent["patterns"]:
-            if pattern.lower() in translated:
-                reply = intent["responses"][0]
+<body>
 
-                # Translate back to user language
-                final_reply = translator.translate(reply, dest=user_lang).text
+<h1>🎓 College AI Chatbot</h1>
 
-                return jsonify({"reply": final_reply})
+<div id="chatbox">
+    <div class="bot">Hello! How can I help you today?</div>
+</div>
 
-    return jsonify({"reply": "Sorry, I didn't understand that."})
+<div id="inputArea">
+    <input id="text" type="text" placeholder="Ask anything...">
+    <button onclick="sendMessage()">Send</button>
+    <button onclick="startVoice()">🎤 Speak</button>
+</div>
 
+<script>
+function addMessage(message, sender) {
+    let chatbox = document.getElementById("chatbox");
 
-if __name__ == "__main__":
-    app.run(debug=True)
+    let div = document.createElement("div");
+    div.className = sender;
+    div.innerText = message;
+
+    chatbox.appendChild(div);
+    chatbox.scrollTop = chatbox.scrollHeight;
+}
+
+function sendMessage() {
+    let input = document.getElementById("text");
+    let message = input.value;
+
+    if (message.trim() === "") return;
+
+    addMessage(message, "user");
+
+    fetch("/get", {
+        method: "POST",
+        body: JSON.stringify({message: message}),
+        headers: {"Content-Type": "application/json"}
+    })
+    .then(response => response.json())
+    .then(data => {
+        addMessage(data.reply, "bot");
+        speak(data.reply); // voice output
+    });
+
+    input.value = "";
+}
+
+function startVoice() {
+    let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+    recognition.lang = "en-IN";
+    recognition.start();
+
+    recognition.onresult = function(event) {
+        let text = event.results[0][0].transcript;
+        document.getElementById("text").value = text;
+        sendMessage();
+    };
+
+    recognition.onerror = function() {
+        alert("Voice recognition error. Please try again.");
+    };
+}
+
+function speak(text) {
+    let speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "en-IN";
+    window.speechSynthesis.speak(speech);
+}
+</script>
+
+</body>
+</html>
