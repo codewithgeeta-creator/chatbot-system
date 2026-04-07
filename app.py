@@ -3,7 +3,6 @@ import json
 
 app = Flask(__name__)
 
-# Load intents
 with open("intents.json", encoding="utf-8") as file:
     data = json.load(file)
 
