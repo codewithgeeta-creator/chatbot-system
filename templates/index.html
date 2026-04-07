@@ -105,21 +105,14 @@ function addMessage(message, sender) {
     chatbox.scrollTop = chatbox.scrollHeight;
 }
 
-function detectLanguage(text) {
-    // Kannada Unicode range
-    if (/[\u0C80-\u0CFF]/.test(text)) return "kn-IN";
-
-    // Hindi (Devanagari)
-    if (/[\u0900-\u097F]/.test(text)) return "hi-IN";
-
-    // Telugu Unicode range
-    if (/[\u0C00-\u0C7F]/.test(text)) return "te-IN";
-
-    // Default English
-    return "en-IN";
+function detectLanguageFromResponse(text) {
+    if (/[\u0C80-\u0CFF]/.test(text)) return "kn-IN"; // Kannada
+    if (/[\u0900-\u097F]/.test(text)) return "hi-IN"; // Hindi
+    if (/[\u0C00-\u0C7F]/.test(text)) return "te-IN"; // Telugu
+    return "en-IN"; // English
 }
 
-    function sendMessage() {
+function sendMessage() {
     let input = document.getElementById("text");
     let message = input.value;
 
@@ -136,13 +129,15 @@ function detectLanguage(text) {
     .then(data => {
         addMessage(data.reply, "bot");
 
-        let lang = detectLanguage(message);
+        // 🔥 Detect language from BOT reply (correct way)
+        let lang = detectLanguageFromResponse(data.reply);
         speak(data.reply, lang);
     });
 
     input.value = "";
 }
 
+    
 // 🎤 Voice input
 function startVoice() {
     let recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
