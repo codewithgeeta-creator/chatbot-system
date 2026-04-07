@@ -153,37 +153,52 @@
         "సంప్రదించండి"
       ],
       "responses": [
-        "You can contact the college through the official phone number or email available on the website."
+        "You can contact the college through the official 0816-2294001 or admissions.akshaya@gmail.com ."
       ]
     },
 
+{
+  "tag": "highest_package",
+  "patterns": [
+    "highest package",
+    "highest salary",
+    "top package",
+    "what is highest package",
+
+    "ಅತ್ಯಧಿಕ ಪ್ಯಾಕೇಜ್",
+    "ಹೆಚ್ಚಿನ ಸಂಬಳ",
+
+    "सबसे अधिक पैकेज",
+    "highest package kya hai",
+
+    "అత్యధిక ప్యాకేజీ",
+    "highest package enti"
+  ],
+  "responses": [
+    "The highest package offered is 5.5 LPA."
+  ]
+},
     {
-      "tag": "placement_package",
-      "patterns": [
-        "highest package",
-        "lowest package",
-        "placement salary",
-        "highest salary",
-        "lowest salary",
-        "what is highest package",
-        "what is lowest package",
+  "tag": "lowest_package",
+  "patterns": [
+    "lowest package",
+    "lowest salary",
+    "minimum package",
+    "what is lowest package",
 
-        "ಹೆಚ್ಚಿನ ಪ್ಯಾಕೇಜ್",
-        "ಕಡಿಮೆ ಪ್ಯಾಕೇಜ್",
-        "ಅತ್ಯಧಿಕ ಸಂಬಳ",
-        "ಕನಿಷ್ಠ ಸಂಬಳ",
+    "ಕನಿಷ್ಠ ಪ್ಯಾಕೇಜ್",
+    "ಕಡಿಮೆ ಸಂಬಳ",
 
-        "highest package kya hai",
-        "lowest package kya hai",
-        "salary kitna milta hai",
+    "सबसे कम पैकेज",
+    "lowest package kya hai",
 
-        "highest package enti",
-        "lowest package enti"
-      ],
-      "responses": [
-        "The highest package offered is 5.5 LPA and the lowest package is 2.4 LPA."
-      ]
-    }
+    "కనిష్ట ప్యాకేజీ",
+    "lowest package enti"
+  ],
+  "responses": [
+    "The lowest package offered is 2.4 LPA."
+  ]
+}
 
   ]
 }
