@@ -3,7 +3,12 @@
 
     {
       "tag": "greeting",
-      "patterns": ["hi", "hello", "hey", "ನಮಸ್ಕಾರ", "नमस्ते", "హలో"],
+      "patterns": [
+        "hi", "hello", "hey",
+        "ನಮಸ್ಕಾರ",
+        "नमस्ते",
+        "హలో"
+      ],
       "responses": {
         "en": "Hello! How can I help you?",
         "kn": "ನಮಸ್ಕಾರ! ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
@@ -14,7 +19,12 @@
 
     {
       "tag": "fees",
-      "patterns": ["fees", "college fees", "ಕಾಲೇಜ್ ಫೀಸ್ ಎಷ್ಟು", "कॉलेज फीस कितनी है", "కాలేజ్ ఫీజు ఎంత"],
+      "patterns": [
+        "fees", "college fees", "fee structure",
+        "ಕಾಲೇಜ್ ಫೀಸ್ ಎಷ್ಟು",
+        "कॉलेज फीस कितनी है",
+        "కాలేజ్ ఫీజు ఎంత"
+      ],
       "responses": {
         "en": "The fee ranges between ₹50,000 to ₹1,50,000 per year.",
         "kn": "ಫೀಸ್ ವರ್ಷಕ್ಕೆ ₹50,000 ರಿಂದ ₹1,50,000 ರವರೆಗೆ ಇರುತ್ತದೆ.",
@@ -25,7 +35,13 @@
 
     {
       "tag": "courses",
-      "patterns": ["courses", "branches", "departments", "ಯಾವ ಕೋರ್ಸ್‌ಗಳು ಇವೆ", "कौन से कोर्स हैं", "ఏ కోర్సులు ఉన్నాయి"],
+      "patterns": [
+        "courses", "branches", "departments",
+        "what courses are available",
+        "ಯಾವ ಕೋರ್ಸ್‌ಗಳು ಇವೆ",
+        "कौन से कोर्स हैं",
+        "ఏ కోర్సులు ఉన్నాయి"
+      ],
       "responses": {
         "en": "We offer Computer Science, Information Science, Electronics and Communication, Civil, Mechanical, AI & Data Science, and Agriculture.",
         "kn": "ನಾವು ಕಂಪ್ಯೂಟರ್ ಸೈನ್ಸ್, ಇನ್ಫರ್ಮೇಶನ್ ಸೈನ್ಸ್, ಇಸಿಇ, ಸಿವಿಲ್, ಮೆಕ್ಯಾನಿಕಲ್, AI & ಡೇಟಾ ಸೈನ್ಸ್ ಮತ್ತು ಅಗ್ರಿಕಲ್ಚರ್ ಕೋರ್ಸ್‌ಗಳನ್ನು ನೀಡುತ್ತೇವೆ.",
@@ -36,7 +52,12 @@
 
     {
       "tag": "placement",
-      "patterns": ["placement", "placements", "placement record", "ಪ್ಲೇಸ್‌ಮೆಂಟ್", "प्लेसमेंट", "ప్లేస్మెంట్"],
+      "patterns": [
+        "placement", "placements", "placement record",
+        "ಪ್ಲೇಸ್‌ಮೆಂಟ್",
+        "प्लेसमेंट",
+        "ప్లేస్మెంట్"
+      ],
       "responses": {
         "en": "Our college has good placement support with multiple companies visiting every year.",
         "kn": "ನಮ್ಮ ಕಾಲೇಜಿನಲ್ಲಿ ಉತ್ತಮ ಪ್ಲೇಸ್‌ಮೆಂಟ್ ವ್ಯವಸ್ಥೆ ಇದೆ ಮತ್ತು ಪ್ರತಿವರ್ಷ ಹಲವಾರು ಕಂಪನಿಗಳು ಬರುತ್ತವೆ.",
@@ -47,18 +68,47 @@
 
     {
       "tag": "placement_details",
-      "patterns": ["companies visited", "placement companies", "ಎಷ್ಟು ಕಂಪನಿಗಳು ಬಂದವು", "कितनी कंपनियां आई", "ఎన్ని కంపెనీలు వచ్చాయి"],
+      "patterns": [
+        "companies visited", "placement companies",
+        "which companies visited",
+        "ಎಷ್ಟು ಕಂಪನಿಗಳು ಬಂದವು",
+        "कितनी कंपनियां आई",
+        "ఎన్ని కంపెనీలు వచ్చాయి"
+      ],
       "responses": {
-        "en": "Companies like Planet , Cloud Built , Rinex , Inner Circle, Edubricz , HLT Software , Tata Electronics , Bosch , Basant Technologies , SMK Management  visited.",
-        "kn": "Planet , Cloud Built , Rinex , Inner Circle , Edubricz , HLT Software , Tata Electronics , Bosch , Basant Technologies , SMK Management  ಕಂಪನಿಗಳು ಬಂದಿವೆ.",
-        "hi": "Planet , Cloud Built , Rinex , Inner Circle , Edubricz , HLT Software , Tata Electronics , Bosch , Basant Technologies , SMK Management कंपनियां आईं।",
-        "te": "Planet , Cloud Built , Rinex , Inner Circle , Edubricz , HLT Software , Tata Electronics , Bosch , Basant Technologies , SMK Management  కంపెనీలు వచ్చాయి."
+        "en": "Companies like Cloud Built (20), Rinex (13), Inner Circle (9), Edubricz (5), HLT Software (7), Tata Electronics (16), Bosch (5), Basant Technologies (23), SMK Management (3) visited.",
+        "kn": "Cloud Built (20), Rinex (13), Inner Circle (9), Edubricz (5), HLT Software (7), Tata Electronics (16), Bosch (5), Basant Technologies (23), SMK Management (3) ಕಂಪನಿಗಳು ಬಂದಿವೆ.",
+        "hi": "Cloud Built (20), Rinex (13), Inner Circle (9), Edubricz (5), HLT Software (7), Tata Electronics (16), Bosch (5), Basant Technologies (23), SMK Management (3) कंपनियां आईं।",
+        "te": "Cloud Built (20), Rinex (13), Inner Circle (9), Edubricz (5), HLT Software (7), Tata Electronics (16), Bosch (5), Basant Technologies (23), SMK Management (3) కంపెనీలు వచ్చాయి."
+      }
+    },
+
+    {
+      "tag": "students_placed",
+      "patterns": [
+        "how many students got placed",
+        "students placed",
+        "placement count",
+        "ಎಷ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು ಪ್ಲೇಸ್‌ಮೆಂಟ್ ಪಡೆದರು",
+        "कितने छात्रों को प्लेसमेंट मिला",
+        "ఎన్ని విద్యార్థులు ప్లేస్‌మెంట్ పొందారు"
+      ],
+      "responses": {
+        "en": "Around 101 students got placed this year.",
+        "kn": "ಈ ವರ್ಷ ಸುಮಾರು 101 ವಿದ್ಯಾರ್ಥಿಗಳು ಪ್ಲೇಸ್‌ಮೆಂಟ್ ಪಡೆದಿದ್ದಾರೆ.",
+        "hi": "इस वर्ष लगभग 101 छात्रों को प्लेसमेंट मिला है।",
+        "te": "ఈ సంవత్సరం సుమారు 101 మంది విద్యార్థులు ప్లేస్‌మెంట్ పొందారు."
       }
     },
 
     {
       "tag": "highest_package",
-      "patterns": ["highest package", "highest salary", "ಹೆಚ್ಚಿನ ಪ್ಯಾಕೇಜ್", "उच्चतम पैकेज", "అత్యధిక ప్యాకేజీ"],
+      "patterns": [
+        "highest package", "highest salary",
+        "ಹೆಚ್ಚಿನ ಪ್ಯಾಕೇಜ್",
+        "उच्चतम पैकेज",
+        "అత్యధిక ప్యాకేజీ"
+      ],
       "responses": {
         "en": "The highest package offered is 5.5 LPA.",
         "kn": "ಅತ್ಯಧಿಕ ಪ್ಯಾಕೇಜ್ 5.5 LPA ಆಗಿದೆ.",
@@ -69,7 +119,12 @@
 
     {
       "tag": "lowest_package",
-      "patterns": ["lowest package", "minimum salary", "ಕಡಿಮೆ ಪ್ಯಾಕೇಜ್", "न्यूनतम पैकेज", "కనిష్ట ప్యాకేజీ"],
+      "patterns": [
+        "lowest package", "minimum salary",
+        "ಕಡಿಮೆ ಪ್ಯಾಕೇಜ್",
+        "न्यूनतम पैकेज",
+        "కనిష్ట ప్యాకేజీ"
+      ],
       "responses": {
         "en": "The lowest package offered is 2.4 LPA.",
         "kn": "ಕಡಿಮೆ ಪ್ಯಾಕೇಜ್ 2.4 LPA ಆಗಿದೆ.",
@@ -77,28 +132,15 @@
         "te": "కనిష్ట ప్యాకేజీ 2.4 LPA."
       }
     },
-    
-    {
-  "tag": "students_placed",
-  "patterns": [
-    "how many students got placed",
-    "students placed",
-    "placement count",
-    "ಎಷ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು ಪ್ಲೇಸ್‌ಮೆಂಟ್ ಪಡೆದರು",
-    "कितने छात्रों को प्लेसमेंट मिला",
-    "ఎన్ని విద్యార్థులు ప్లేస్‌మెంట్ పొందారు"
-  ],
-  "responses": {
-    "en": "Around 101 students got placed this year across various companies.",
-    "kn": "ಈ ವರ್ಷ ಸುಮಾರು 101 ವಿದ್ಯಾರ್ಥಿಗಳು ವಿವಿಧ ಕಂಪನಿಗಳಲ್ಲಿ ಪ್ಲೇಸ್‌ಮೆಂಟ್ ಪಡೆದಿದ್ದಾರೆ.",
-    "hi": "इस वर्ष लगभग 101 छात्रों को विभिन्न कंपनियों में प्लेसमेंट मिला है।",
-    "te": "ఈ సంవత్సరం సుమారు 101 మంది విద్యార్థులు వివిధ కంపెనీలలో ప్లేస్‌మెంట్ పొందారు."
-  }
-},
 
     {
       "tag": "location",
-      "patterns": ["location", "where is college", "ಕಾಲೇಜ್ ಎಲ್ಲಿದೆ", "कॉलेज कहाँ है", "కాలేజ్ ఎక్కడ ఉంది"],
+      "patterns": [
+        "location", "where is college",
+        "ಕಾಲೇಜ್ ಎಲ್ಲಿದೆ",
+        "कॉलेज कहाँ है",
+        "కాలేజ్ ఎక్కడ ఉంది"
+      ],
       "responses": {
         "en": "The college is located in Tumkur, Karnataka.",
         "kn": "ಕಾಲೇಜ್ ತುಮಕೂರಿನಲ್ಲಿ ಇದೆ.",
@@ -109,7 +151,12 @@
 
     {
       "tag": "hostel",
-      "patterns": ["hostel", "hostel facility", "ಹಾಸ್ಟೆಲ್", "हॉस्टल", "హాస్టల్"],
+      "patterns": [
+        "hostel", "hostel facility",
+        "ಹಾಸ್ಟೆಲ್",
+        "हॉस्टल",
+        "హాస్టల్"
+      ],
       "responses": {
         "en": "Yes, hostel facilities are available for both boys and girls.",
         "kn": "ಹೌದು, ಹುಡುಗರು ಮತ್ತು ಹುಡುಗಿಯರಿಗೆ ಹಾಸ್ಟೆಲ್ ಸೌಲಭ್ಯ ಇದೆ.",
@@ -120,7 +167,12 @@
 
     {
       "tag": "goodbye",
-      "patterns": ["bye", "thank you", "thanks", "ಧನ್ಯವಾದಗಳು", "धन्यवाद", "ధన్యవాదాలు"],
+      "patterns": [
+        "bye", "thank you", "thanks",
+        "ಧನ್ಯವಾದಗಳು",
+        "धन्यवाद",
+        "ధన్యవాదాలు"
+      ],
       "responses": {
         "en": "Thank you! Have a great day.",
         "kn": "ಧನ್ಯವಾದಗಳು! ನಿಮಗೆ ಶುಭ ದಿನವಾಗಲಿ.",
