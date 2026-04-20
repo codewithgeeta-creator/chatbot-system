@@ -2,183 +2,93 @@
   "intents": [
 
     {
-      "tag": "greeting",
       "patterns": [
         "hi", "hello", "hey",
-        "ನಮಸ್ಕಾರ",
-        "नमस्ते",
-        "హలో"
+        "ನಮಸ್ಕಾರ", "ಹಾಯ್",
+        "नमस्ते", "हेलो",
+        "నమస్కారం", "హాయ్"
       ],
-      "responses": {
-        "en": "Hello! How can I help you?",
-        "kn": "ನಮಸ್ಕಾರ! ನಾನು ನಿಮಗೆ ಹೇಗೆ ಸಹಾಯ ಮಾಡಬಹುದು?",
-        "hi": "नमस्ते! मैं आपकी कैसे मदद कर सकता हूँ?",
-        "te": "హలో! నేను మీకు ఎలా సహాయం చేయగలను?"
-      }
+      "responses": [
+        "Hello! Welcome to Akshaya Institute of Technology. How may I assist you today?"
+      ]
     },
 
     {
-      "tag": "fees",
       "patterns": [
-        "fees", "college fees", "fee structure",
-        "ಕಾಲೇಜ್ ಫೀಸ್ ಎಷ್ಟು",
-        "कॉलेज फीस कितनी है",
-        "కాలేజ్ ఫీజు ఎంత"
+        "about college", "about ait", "college information",
+        "ಕಾಲೇಜ್ ಬಗ್ಗೆ ಮಾಹಿತಿ",
+        "कॉलेज के बारे में बताओ",
+        "కాలేజ్ గురించి చెప్పండి"
       ],
-      "responses": {
-        "en": "The fee ranges between ₹50,000 to ₹1,50,000 per year.",
-        "kn": "ಫೀಸ್ ವರ್ಷಕ್ಕೆ ₹50,000 ರಿಂದ ₹1,50,000 ರವರೆಗೆ ಇರುತ್ತದೆ.",
-        "hi": "फीस ₹50,000 से ₹1,50,000 प्रति वर्ष होती है।",
-        "te": "ఫీజు సంవత్సరానికి ₹50,000 నుండి ₹1,50,000 వరకు ఉంటుంది."
-      }
+      "responses": [
+        "Akshaya Institute of Technology, Tumakuru, is a reputed engineering college with modern infrastructure, experienced faculty, and focus on quality education."
+      ]
     },
 
     {
-      "tag": "courses",
       "patterns": [
-        "courses", "branches", "departments",
-        "what courses are available",
-        "ಯಾವ ಕೋರ್ಸ್‌ಗಳು ಇವೆ",
-        "कौन से कोर्स हैं",
-        "ఏ కోర్సులు ఉన్నాయి"
+        "courses", "branches", "what courses are available",
+        "ಕೋರ್ಸ್‌ಗಳು ಯಾವುವು", "ಯಾವ ಬ್ರಾಂಚ್‌ಗಳು ಇವೆ",
+        "कौन से कोर्स हैं", "कौन से ब्रांच हैं",
+        "ఏ కోర్సులు ఉన్నాయి", "ఏ బ్రాంచ్‌లు ఉన్నాయి"
       ],
-      "responses": {
-        "en": "We offer Computer Science, Information Science, Electronics and Communication, Civil, Mechanical, AI & Data Science, and Agriculture.",
-        "kn": "ನಾವು ಕಂಪ್ಯೂಟರ್ ಸೈನ್ಸ್, ಇನ್ಫರ್ಮೇಶನ್ ಸೈನ್ಸ್, ಇಸಿಇ, ಸಿವಿಲ್, ಮೆಕ್ಯಾನಿಕಲ್, AI & ಡೇಟಾ ಸೈನ್ಸ್ ಮತ್ತು ಅಗ್ರಿಕಲ್ಚರ್ ಕೋರ್ಸ್‌ಗಳನ್ನು ನೀಡುತ್ತೇವೆ.",
-        "hi": "हम कंप्यूटर साइंस, सूचना विज्ञान, ईसीई, सिविल, मैकेनिकल, एआई और डेटा साइंस और कृषि पाठ्यक्रम प्रदान करते हैं।",
-        "te": "మేము కంప్యూటర్ సైన్స్, ఇన్ఫర్మేషన్ సైన్స్, ECE, సివిల్, మెకానికల్, AI & డేటా సైన్స్ మరియు అగ్రికల్చర్ కోర్సులు అందిస్తున్నాము."
-      }
+      "responses": [
+        "We offer Engineering programs in Computer Science, Information Science, Electronics, Civil, Mechanical, AI and Data Science, and Agricultural Engineering."
+      ]
     },
 
     {
-      "tag": "placement",
       "patterns": [
-        "placement", "placements", "placement record",
-        "ಪ್ಲೇಸ್‌ಮೆಂಟ್",
-        "प्लेसमेंट",
-        "ప్లేస్మెంట్"
+        "fees", "fee structure", "college fees", "fees details",
+        "ಕಾಲೇಜ್ ಫೀಸ್ ಎಷ್ಟು", "ಫೀಸ್ ವಿವರ",
+        "कॉलेज फीस कितनी है", "फीस स्ट्रक्चर",
+        "కాలేజ్ ఫీజు ఎంత", "ఫీజు వివరాలు"
       ],
-      "responses": {
-        "en": "Our college has good placement support with multiple companies visiting every year.",
-        "kn": "ನಮ್ಮ ಕಾಲೇಜಿನಲ್ಲಿ ಉತ್ತಮ ಪ್ಲೇಸ್‌ಮೆಂಟ್ ವ್ಯವಸ್ಥೆ ಇದೆ ಮತ್ತು ಪ್ರತಿವರ್ಷ ಹಲವಾರು ಕಂಪನಿಗಳು ಬರುತ್ತವೆ.",
-        "hi": "हमारे कॉलेज में अच्छा प्लेसमेंट सपोर्ट है और हर साल कई कंपनियां आती हैं।",
-        "te": "మా కాలేజీలో మంచి ప్లేస్మెంట్ సపోర్ట్ ఉంది మరియు ప్రతి సంవత్సరం అనేక కంపెనీలు వస్తాయి."
-      }
+      "responses": [
+        "The fee structure varies by course and category. On average, it ranges between 50000 and 150000 per year."
+      ]
     },
 
     {
-      "tag": "placement_details",
       "patterns": [
-        "companies visited", "placement companies",
-        "which companies visited",
-        "ಎಷ್ಟು ಕಂಪನಿಗಳು ಬಂದವು",
-        "कितनी कंपनियां आई",
-        "ఎన్ని కంపెనీలు వచ్చాయి"
+        "admission", "how to apply", "admission process",
+        "ಅಡ್ಮಿಷನ್ ಹೇಗೆ ಪಡೆಯುವುದು", "ಅರ್ಜಿ ಹೇಗೆ ಹಾಕಬೇಕು",
+        "एडमिशन कैसे लें", "कैसे आवेदन करें",
+        "అడ్మిషన్ ఎలా తీసుకోవాలి", "ఎలా అప్లై చేయాలి"
       ],
-      "responses": {
-        "en": "Companies like Cloud Built (20), Rinex (13), Inner Circle (9), Edubricz (5), HLT Software (7), Tata Electronics (16), Bosch (5), Basant Technologies (23), SMK Management (3) visited.",
-        "kn": "Cloud Built (20), Rinex (13), Inner Circle (9), Edubricz (5), HLT Software (7), Tata Electronics (16), Bosch (5), Basant Technologies (23), SMK Management (3) ಕಂಪನಿಗಳು ಬಂದಿವೆ.",
-        "hi": "Cloud Built (20), Rinex (13), Inner Circle (9), Edubricz (5), HLT Software (7), Tata Electronics (16), Bosch (5), Basant Technologies (23), SMK Management (3) कंपनियां आईं।",
-        "te": "Cloud Built (20), Rinex (13), Inner Circle (9), Edubricz (5), HLT Software (7), Tata Electronics (16), Bosch (5), Basant Technologies (23), SMK Management (3) కంపెనీలు వచ్చాయి."
-      }
+      "responses": [
+        "Admissions are through KCET, COMEDK, or management quota. You can apply online or visit the college."
+      ]
     },
 
     {
-      "tag": "students_placed",
       "patterns": [
-        "how many students got placed",
-        "students placed",
-        "placement count",
-        "ಎಷ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು ಪ್ಲೇಸ್‌ಮೆಂಟ್ ಪಡೆದರು",
-        "कितने छात्रों को प्लेसमेंट मिला",
-        "ఎన్ని విద్యార్థులు ప్లేస్‌మెంట్ పొందారు"
+        "placement", "placement details", "placement record",
+        "how many students placed", "highest package", "lowest package",
+        "companies visited",
+        "ಪ್ಲೇಸ್ಮೆಂಟ್ ಮಾಹಿತಿ", "ಎಷ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು ಪ್ಲೇಸ್ ಆಗಿದ್ದಾರೆ",
+        "ಅತ್ಯಧಿಕ ಪ್ಯಾಕೇಜ್", "ಕನಿಷ್ಠ ಪ್ಯಾಕೇಜ್",
+        "प्लेसमेंट डिटेल्स", "कितने स्टूडेंट प्लेस हुए",
+        "सबसे ज्यादा पैकेज", "सबसे कम पैकेज",
+        "ప్లేస్‌మెంట్ వివరాలు", "ఎంతమంది స్టూడెంట్స్ ప్లేస్ అయ్యారు",
+        "అత్యధిక ప్యాకేజ్", "కనిష్ట ప్యాకేజ్"
       ],
-      "responses": {
-        "en": "Around 101 students got placed this year.",
-        "kn": "ಈ ವರ್ಷ ಸುಮಾರು 101 ವಿದ್ಯಾರ್ಥಿಗಳು ಪ್ಲೇಸ್‌ಮೆಂಟ್ ಪಡೆದಿದ್ದಾರೆ.",
-        "hi": "इस वर्ष लगभग 101 छात्रों को प्लेसमेंट मिला है।",
-        "te": "ఈ సంవత్సరం సుమారు 101 మంది విద్యార్థులు ప్లేస్‌మెంట్ పొందారు."
-      }
-    },
+      "responses": [
+        "In the 2025-26 placement drive, more than 10 companies visited our campus including Cloud Built, Basant Technologies, Inner Circle, Tata Electronics, Bosch and Planet.\n\nAround 107 plus students were successfully placed.\n\nThe highest package offered is 12 LPA and the lowest package is 2.5 LPA.\n\nTop placed students from Cloud Built Technologies (5.4 LPA):\nSahana T R\nDarshan G K\nSneha B Mulangi\nJignu Unnisa\nAkshatha Patil\nMamatha M N\nDileep Kumar M\nVathsala D H\nPallavi N\nRachana S N\nKavana R\nSushma H M\nKushal Gowda R\n\nTech Support (Cloud Built – 4.8 LPA):\nGeeta Jagadish Malali\nRuchitha S\nDivya K\nVidhyashree K S\nVijayalakshmi R B\nN Ganesh\nNisarga S\n\nBasant Technologies:\nPruthveesh R\nRakshak Janvekar\nAkash S Z\nAnjan Shetty M\nN Ajjan Gowda\nSrinivas K V\nChandrashekar Patil\nPavan Kumar M R\nThejasvini P\nPrerana Kadli\nNavyashree G\nNisarga A\nSandhya K M\nPushpa G S\nDivya K\nSuhani\nShreya Shrishail M\nMoulya M\nRakshitha A S\nBharathi H V\nBindushree R\nTejasri Mopidevi\nSneha B Mulangi\n\nOcean Link Sea Services (5.75 LPA):\nSachin Kumar B\nAbhilash D R\nSandeep Ashok\n\nArchelos Intelsense:\nPriyanka\nPrerana Kadli\nPavan Kumar M R\nN Ajjangowda\nPruthveesh R\nShashank B M\nPradeep S\nAkash S\n\nInner Circle Softech (4.75 LPA):\nPraveen M Dangi\nNandibevooru Yashawantha\nYuvaraj Rolli\nSatish Kumar K Biradar\nSiddanagowda K T\nHarshitha A H\nSwetha S N\nAnjanadevi M\nSushma H M\n\nNxtSync Company:\nVamshi P R – 5.4 LPA\n\nPlanet Company:\nRakshak – 9 to 12 LPA"
+  ]
+},
+    
 
     {
-      "tag": "highest_package",
       "patterns": [
-        "highest package", "highest salary",
-        "ಹೆಚ್ಚಿನ ಪ್ಯಾಕೇಜ್",
-        "उच्चतम पैकेज",
-        "అత్యధిక ప్యాకేజీ"
+        "facilities", "college facilities",
+        "ಸೌಲಭ್ಯಗಳು ಯಾವುವು",
+        "कौन सी सुविधाएं हैं",
+        "ఏ సౌకర్యాలు ఉన్నాయి"
       ],
-      "responses": {
-        "en": "The highest package offered is 5.5 LPA.",
-        "kn": "ಅತ್ಯಧಿಕ ಪ್ಯಾಕೇಜ್ 5.5 LPA ಆಗಿದೆ.",
-        "hi": "उच्चतम पैकेज 5.5 LPA है।",
-        "te": "అత్యధిక ప్యాకేజీ 5.5 LPA."
-      }
-    },
-
-    {
-      "tag": "lowest_package",
-      "patterns": [
-        "lowest package", "minimum salary",
-        "ಕಡಿಮೆ ಪ್ಯಾಕೇಜ್",
-        "न्यूनतम पैकेज",
-        "కనిష్ట ప్యాకేజీ"
-      ],
-      "responses": {
-        "en": "The lowest package offered is 2.4 LPA.",
-        "kn": "ಕಡಿಮೆ ಪ್ಯಾಕೇಜ್ 2.4 LPA ಆಗಿದೆ.",
-        "hi": "न्यूनतम पैकेज 2.4 LPA है।",
-        "te": "కనిష్ట ప్యాకేజీ 2.4 LPA."
-      }
-    },
-
-    {
-      "tag": "location",
-      "patterns": [
-        "location", "where is college",
-        "ಕಾಲೇಜ್ ಎಲ್ಲಿದೆ",
-        "कॉलेज कहाँ है",
-        "కాలేజ్ ఎక్కడ ఉంది"
-      ],
-      "responses": {
-        "en": "The college is located in Tumkur, Karnataka.",
-        "kn": "ಕಾಲೇಜ್ ತುಮಕೂರಿನಲ್ಲಿ ಇದೆ.",
-        "hi": "कॉलेज तुमकुर, कर्नाटक में स्थित है।",
-        "te": "కాలేజ్ తుమ్కూర్, కర్ణాటకలో ఉంది."
-      }
-    },
-
-    {
-      "tag": "hostel",
-      "patterns": [
-        "hostel", "hostel facility",
-        "ಹಾಸ್ಟೆಲ್",
-        "हॉस्टल",
-        "హాస్టల్"
-      ],
-      "responses": {
-        "en": "Yes, hostel facilities are available for both boys and girls.",
-        "kn": "ಹೌದು, ಹುಡುಗರು ಮತ್ತು ಹುಡುಗಿಯರಿಗೆ ಹಾಸ್ಟೆಲ್ ಸೌಲಭ್ಯ ಇದೆ.",
-        "hi": "हाँ, लड़कों और लड़कियों के लिए हॉस्टल सुविधा उपलब्ध है।",
-        "te": "అవును, అబ్బాయిలు మరియు అమ్మాయిలకు హాస్టల్ సదుపాయం ఉంది."
-      }
-    },
-
-    {
-      "tag": "goodbye",
-      "patterns": [
-        "bye", "thank you", "thanks",
-        "ಧನ್ಯವಾದಗಳು",
-        "धन्यवाद",
-        "ధన్యవాదాలు"
-      ],
-      "responses": {
-        "en": "Thank you! Have a great day.",
-        "kn": "ಧನ್ಯವಾದಗಳು! ನಿಮಗೆ ಶುಭ ದಿನವಾಗಲಿ.",
-        "hi": "धन्यवाद! आपका दिन शुभ हो।",
-        "te": "ధన్యవాదాలు! మీ రోజు శుభంగా ఉండాలి."
-      }
+      "responses": [
+        "The campus provides modern laboratories, smart classrooms, library, WiFi, hostels, transportation, sports facilities and cafeteria."
+      ]
     }
 
   ]
