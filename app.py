@@ -1,50 +1,76 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
 import json
+from deep_translator import GoogleTranslator
 
-# ✅ Create app (THIS WAS MISSING / ERROR BEFORE)
 app = Flask(__name__)
 
-# Load intents file
+# Load intents
 with open("intents.json", encoding="utf-8") as file:
     data = json.load(file)
 
-# Home page
+# Smart response (priority-based)
+def get_response(user_input):
+    user_input = user_input.lower()
+
+    if any(word in user_input for word in ["placement", "placed", "package", "company"]):
+        return data["intents"][5]["responses"][0]
+
+    elif any(word in user_input for word in ["fee", "fees", "cost"]):
+        return data["intents"][3]["responses"][0]
+
+    elif any(word in user_input for word in ["admission", "apply"]):
+        return data["intents"][4]["responses"][0]
+
+    elif any(word in user_input for word in ["course", "branch"]):
+        return data["intents"][2]["responses"][0]
+
+    elif any(word in user_input for word in ["facility", "facilities"]):
+        return data["intents"][6]["responses"][0]
+
+    elif any(word in user_input for word in ["about", "college", "ait"]):
+        return data["intents"][1]["responses"][0]
+
+    elif any(word in user_input for word in ["hi", "hello", "hey"]):
+        return data["intents"][0]["responses"][0]
+
+    return "Please ask about college, fees, courses, admissions, or placements."
+
+# Detect language
+def detect_language(text):
+    if any('\u0C80' <= ch <= '\u0CFF' for ch in text):
+        return 'kn'
+    elif any('\u0900' <= ch <= '\u097F' for ch in text):
+        return 'hi'
+    elif any('\u0C00' <= ch <= '\u0C7F' for ch in text):
+        return 'te'
+    else:
+        return 'en'
+
 @app.route("/")
 def home():
     return render_template("index.html")
 
-# Chatbot API
+
 @app.route("/get", methods=["POST"])
 def chatbot():
-    user_message = request.json["message"]
+    userText = request.form["msg"]
 
-    # Language detection
-    if any(char in user_message for char in "ಅಆಇಈಉಊಎಏಐಒಓಔ"):
-        lang = "kn"
-    elif any(char in user_message for char in "अआइईउऊएऐओऔ"):
-        lang = "hi"
-    elif any(char in user_message for char in "అఆఇఈఉఊఎఏఐఒఓఔ"):
-        lang = "te"
-    else:
-        lang = "en"
+    user_lang = detect_language(userText)
 
-    user_message = user_message.lower()
+    try:
+        translated = GoogleTranslator(source='auto', target='en').translate(userText)
+    except:
+        translated = userText
 
-    # Match intent
-    for intent in data["intents"]:
-        for pattern in intent["patterns"]:
-            if pattern.lower() in user_message or user_message in pattern:
+    bot_response = get_response(translated)
 
-                responses = intent["responses"]
+    try:
+        final_response = GoogleTranslator(source='en', target=user_lang).translate(bot_response)
+    except:
+        final_response = bot_response
 
-                # Multilingual response
-                if isinstance(responses, dict):
-                    return jsonify({"reply": responses.get(lang, responses["en"])})
+    return final_response
 
-                return jsonify({"reply": responses[0]})
 
-    return jsonify({"reply": "Sorry, I didn't understand that."})
-
-# Run app
 if __name__ == "__main__":
     app.run(debug=True)
