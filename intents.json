@@ -2,92 +2,118 @@
   "intents": [
 
     {
+      "tag": "greeting",
       "patterns": [
-        "hi", "hello", "hey",
-        "ನಮಸ್ಕಾರ", "ಹಾಯ್",
-        "नमस्ते", "हेलो",
-        "నమస్కారం", "హాయ్"
+        "hi","hello","hey",
+        "ನಮಸ್ಕಾರ","ಹಾಯ್",
+        "नमस्ते","हेलो",
+        "నమస్కారం","హాయ్"
       ],
       "responses": [
-        "Hello! Welcome to Akshaya Institute of Technology. How may I assist you today?"
+        "Hello! Welcome to Akshaya Institute of Technology 😊"
       ]
     },
 
     {
+      "tag": "about",
       "patterns": [
-        "about college", "about ait", "college information",
+        "about college","about ait",
         "ಕಾಲೇಜ್ ಬಗ್ಗೆ ಮಾಹಿತಿ",
         "कॉलेज के बारे में बताओ",
         "కాలేజ్ గురించి చెప్పండి"
       ],
       "responses": [
-        "Akshaya Institute of Technology, Tumakuru, is a reputed engineering college with modern infrastructure, experienced faculty, and focus on quality education."
+        "Akshaya Institute of Technology, Tumakuru, is a reputed engineering college with modern infrastructure, experienced faculty and focus on quality education."
       ]
     },
 
     {
+      "tag": "courses",
       "patterns": [
-        "courses", "branches", "what courses are available",
-        "ಕೋರ್ಸ್‌ಗಳು ಯಾವುವು", "ಯಾವ ಬ್ರಾಂಚ್‌ಗಳು ಇವೆ",
-        "कौन से कोर्स हैं", "कौन से ब्रांच हैं",
-        "ఏ కోర్సులు ఉన్నాయి", "ఏ బ్రాంచ్‌లు ఉన్నాయి"
+        "courses","branches","intake",
+        "ಕೋರ್ಸ್‌ಗಳು","ಬ್ರಾಂಚ್‌ಗಳು",
+        "कोर्स","ब्रांच",
+        "కోర్సులు","బ్రాంచ్‌లు"
       ],
       "responses": [
-        "We offer Engineering programs in Computer Science, Information Science, Electronics, Civil, Mechanical, AI and Data Science, and Agricultural Engineering."
+"📊 Total Intake Seats:\n\n\
+🎓 UG Programs:\n\
+CSE – 180\nECE – 120\nISE – 60\nAI & DS – 60\nAgricultural – 60\nMechanical – 60\nTotal: 540\n\n\
+🎓 PG Programs:\n\
+MTech CSE – 18\nMTech VLSI – 18\nMBA – 60"
       ]
     },
 
     {
+      "tag": "admission",
       "patterns": [
-        "fees", "fee structure", "college fees", "fees details",
-        "ಕಾಲೇಜ್ ಫೀಸ್ ಎಷ್ಟು", "ಫೀಸ್ ವಿವರ",
-        "कॉलेज फीस कितनी है", "फीस स्ट्रक्चर",
-        "కాలేజ్ ఫీజు ఎంత", "ఫీజు వివరాలు"
+        "admission","apply",
+        "ಅಡ್ಮಿಷನ್","ಅರ್ಜಿ",
+        "एडमिशन","आवेदन",
+        "అడ్మిషన్","అప్లై"
       ],
       "responses": [
-        "The fee structure varies by course and category. On average, it ranges between 50000 and 150000 per year."
+        "Admissions are through KCET (CET Code: E191), COMEDK or management quota. You can apply online or visit the college."
       ]
     },
 
     {
+      "tag": "fees",
       "patterns": [
-        "admission", "how to apply", "admission process",
-        "ಅಡ್ಮಿಷನ್ ಹೇಗೆ ಪಡೆಯುವುದು", "ಅರ್ಜಿ ಹೇಗೆ ಹಾಕಬೇಕು",
-        "एडमिशन कैसे लें", "कैसे आवेदन करें",
-        "అడ్మిషన్ ఎలా తీసుకోవాలి", "ఎలా అప్లై చేయాలి"
+        "fees","fee structure",
+        "ಫೀಸ್","ಫೀಸ್ ವಿವರ",
+        "फीस","फीस स्ट्रक्चर",
+        "ఫీజు","ఫీజు వివరాలు"
       ],
       "responses": [
-        "Admissions are through KCET, COMEDK, or management quota. You can apply online or visit the college."
+        "The fee ranges between 50000 to 150000 per year depending on the course."
       ]
     },
 
     {
+      "tag": "placement",
       "patterns": [
-        "placement", "placement details", "placement record",
-        "how many students placed", "highest package", "lowest package",
-        "companies visited",
-        "ಪ್ಲೇಸ್ಮೆಂಟ್ ಮಾಹಿತಿ", "ಎಷ್ಟು ವಿದ್ಯಾರ್ಥಿಗಳು ಪ್ಲೇಸ್ ಆಗಿದ್ದಾರೆ",
-        "ಅತ್ಯಧಿಕ ಪ್ಯಾಕೇಜ್", "ಕನಿಷ್ಠ ಪ್ಯಾಕೇಜ್",
-        "प्लेसमेंट डिटेल्स", "कितने स्टूडेंट प्लेस हुए",
-        "सबसे ज्यादा पैकेज", "सबसे कम पैकेज",
-        "ప్లేస్‌మెంట్ వివరాలు", "ఎంతమంది స్టూడెంట్స్ ప్లేస్ అయ్యారు",
-        "అత్యధిక ప్యాకేజ్", "కనిష్ట ప్యాకేజ్"
+        "placement","placement details",
+        "ಪ್ಲೇಸ್ಮೆಂಟ್","ಪ್ಲೇಸ್ಮೆಂಟ್ ಮಾಹಿತಿ",
+        "प्लेसमेंट","प्लेसमेंट डिटेल्स",
+        "ప్లేస్‌మెంట్","ప్లేస్‌మెంట్ వివరాలు"
       ],
       "responses": [
-        "In the 2025-26 placement drive, more than 10 companies visited our campus including Cloud Built, Basant Technologies, Inner Circle, Tata Electronics, Bosch and Planet.\n\nAround 107 plus students were successfully placed.\n\nThe highest package offered is 12 LPA and the lowest package is 2.5 LPA.\n\nTop placed students from Cloud Built Technologies (5.4 LPA):\nSahana T R\nDarshan G K\nSneha B Mulangi\nJignu Unnisa\nAkshatha Patil\nMamatha M N\nDileep Kumar M\nVathsala D H\nPallavi N\nRachana S N\nKavana R\nSushma H M\nKushal Gowda R\n\nTech Support (Cloud Built – 4.8 LPA):\nGeeta Jagadish Malali\nRuchitha S\nDivya K\nVidhyashree K S\nVijayalakshmi R B\nN Ganesh\nNisarga S\n\nBasant Technologies:\nPruthveesh R\nRakshak Janvekar\nAkash S Z\nAnjan Shetty M\nN Ajjan Gowda\nSrinivas K V\nChandrashekar Patil\nPavan Kumar M R\nThejasvini P\nPrerana Kadli\nNavyashree G\nNisarga A\nSandhya K M\nPushpa G S\nDivya K\nSuhani\nShreya Shrishail M\nMoulya M\nRakshitha A S\nBharathi H V\nBindushree R\nTejasri Mopidevi\nSneha B Mulangi\n\nOcean Link Sea Services (5.75 LPA):\nSachin Kumar B\nAbhilash D R\nSandeep Ashok\n\nArchelos Intelsense:\nPriyanka\nPrerana Kadli\nPavan Kumar M R\nN Ajjangowda\nPruthveesh R\nShashank B M\nPradeep S\nAkash S\n\nInner Circle Softech (4.75 LPA):\nPraveen M Dangi\nNandibevooru Yashawantha\nYuvaraj Rolli\nSatish Kumar K Biradar\nSiddanagowda K T\nHarshitha A H\nSwetha S N\nAnjanadevi M\nSushma H M\n\nNxtSync Company:\nVamshi P R – 5.4 LPA\n\nPlanet Company:\nRakshak – 9 to 12 LPA"
-  ]
-},
-    
+"📊 Placement Details (2025-26):\n\n\
+💰 Highest Package: 12 LPA\n\
+💰 Lowest Package: 2.5 LPA\n\n\
+Top Companies:\n\
+Cloud Built\nBasant Technologies\nOcean Link\nInner Circle\nNxtSync\nPlanet"
+      ]
+    },
 
     {
+      "tag": "facilities",
       "patterns": [
-        "facilities", "college facilities",
-        "ಸೌಲಭ್ಯಗಳು ಯಾವುವು",
-        "कौन सी सुविधाएं हैं",
-        "ఏ సౌకర్యాలు ఉన్నాయి"
+        "facilities",
+        "ಸೌಲಭ್ಯಗಳು",
+        "सुविधाएं",
+        "సౌకర్యాలు"
       ],
       "responses": [
-        "The campus provides modern laboratories, smart classrooms, library, WiFi, hostels, transportation, sports facilities and cafeteria."
+        "The campus provides labs, smart classrooms, library, WiFi, hostels, transportation, sports and cafeteria."
+      ]
+    },
+
+    {
+      "tag": "contact",
+      "patterns": [
+        "contact","phone",
+        "ಸಂಪರ್ಕ",
+        "संपर्क",
+        "సంప్రదించండి"
+      ],
+      "responses": [
+"📞 Contact Information:\n\
++91 9686218245\n\
++91 9900909011\n\n\
+📧 Email:\n\
+admissions.akshaya@gmail.com"
       ]
     }
 
